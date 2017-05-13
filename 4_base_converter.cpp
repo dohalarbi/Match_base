@@ -201,6 +201,7 @@ void dec_oct(int nmbr)
 }
 
 
+
 void bin_dec(int nmbr)
 {
     int count=0, i, n, temp = nmbr;
@@ -234,45 +235,76 @@ void bin_dec(int nmbr)
     
     
 }
-/*
-int hex_bin(int &nmbr)
-{
-
-}
-
-int hex_dec(int &nmbr)
-{
-
-}
-
-int hex_oct(int &nmbr)
-{
-
-}
-
 
 
 int bin_hex(int &nmbr)
 {
-
+    int count=0, i, n, temp = nmbr, temp1, x, y, j;
+    double dec=0.0;
+    int arr1[4];
+    
+    while(temp>0)
+    {
+        temp = temp/10;
+        count++;
+    }
+    temp1 = count;
+    
+    if(temp1%4 !=0)
+        x = temp1/4 +1;
+    
+    else (temp1%4 ==0);
+        x = temp1/4;
+    
+    int *array_hex = new int[count];
+    
+    for(i=0; i<count; i++){
+        
+        array_hex[i] = nmbr%10;
+        nmbr = nmbr/10;
+    }
+    
+    
+    for(j=0; j<temp1; j++)
+    {
+        
+        arr1[i] = array_hex[temp-i-1];
+    }
+    y = (arr1[0]*1000) + (arr1[1]*100) + (arr1[2]*10) + arr1[3];
+   
 }
 
-int bin_oct(int &nmbr)
+void bin_dec(int nmbr)
 {
-
+    int count=0, i, n, temp = nmbr;
+    double dec=0.0;
+    
+    while(temp>0)
+    {
+        temp = temp/10;
+        count++;
+    }
+    
+    int *array_dec = new int[count];
+    
+    for(i=0; i<count; i++){
+        
+        array_dec[i] = nmbr%10;
+        nmbr = nmbr/10;
+    }
+    
+    cout<<"Decimal number is : ";
+    n = count;
+    for(i=0;i<count;i++)
+    {
+       dec += array_dec[count-i-1] * pow(2, n-1);
+        n--;
+    }
+    cout<<dec;
+    cout<<endl;
+    
+    delete [] array_dec;
+    
+    
 }
 
-int oct_bin(int &nmbr)
-{
-
-}
-
-int oct_dec(int &nmbr)
-{
-
-}
-
-int oct_hex(int &nmbr)
-{
-
-}*/
