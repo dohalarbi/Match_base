@@ -31,7 +31,7 @@ int main()
         n = n/8;
     }
     
-    cout<<"the binary number is : ";
+    cout<<"the octal number is : ";
     
     for(i=0;i<count;i++){
         
