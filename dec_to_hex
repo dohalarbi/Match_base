@@ -32,7 +32,7 @@ int main()
         n = n/16;
     }
     
-    cout<<"the binary number is : ";
+    cout<<"the hexadecimal number is : ";
     
     for(i=0;i<count;i++){
         
