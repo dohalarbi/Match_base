@@ -24,9 +24,6 @@ int main()
         count++;
     }
     
-    cout<<"the number of division is : "<<count;
-    cout<<endl<<endl;
-    
     int *array = new int[count];
     
     for(i=0; i<count; i++){
