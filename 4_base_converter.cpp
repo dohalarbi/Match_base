@@ -237,7 +237,7 @@ void bin_dec(int nmbr)
 }
 
 
-int bin_hex(int &nmbr)
+void bin_hex(int &nmbr)
 {
     int count=0, i, n, temp = nmbr, temp1, x, y, j;
     double dec=0.0;
@@ -258,17 +258,19 @@ int bin_hex(int &nmbr)
     
     int *array_hex = new int[count];
     
-    for(i=0; i<count; i++){
-        
+    for(i=0; i<count; i++)
+    {    
         array_hex[i] = nmbr%10;
         nmbr = nmbr/10;
     }
     
     
-    for(j=0; j<temp1; j++)
+    for(j=0; j<x; j++){
+            for(i=0; i<4;i++)
     {
         
         arr1[i] = array_hex[temp-i-1];
+    }
     }
     y = (arr1[0]*1000) + (arr1[1]*100) + (arr1[2]*10) + arr1[3];
    
