@@ -251,29 +251,43 @@ void bin_hex(int &nmbr)
     temp1 = count;
     
     if(temp1%4 !=0)
-        x = temp1/4 +1;
-    
-    else (temp1%4 ==0);
+        x = temp1/4 +1;  
+    else(temp1%4 ==0);
         x = temp1/4;
     
     int *array_hex = new int[count];
+    int *array_set = new int[x];
     
     for(i=0; i<count; i++)
     {    
         array_hex[i] = nmbr%10;
         nmbr = nmbr/10;
     }
-    
-    
-    for(j=0; j<x; j++){
-            for(i=0; i<4;i++)
+    for(j=0; j<x; j++)
     {
-        
-        arr1[i] = array_hex[temp-i-1];
+        for(i=0; i<4; i++)
+        { 
+            arr1[i] = array_hex[count-i-1];
+        }
+         array_set[j] = (arr1[0]*1000) + (arr1[1]*100) + (arr1[2]*10) + arr1[3];
     }
+    for(int k=0; k<x; k++)
+    {
+    if(array_set[k] == 10)
+        cout<<"A";
+    else if(array_set[k] == 11)
+        cout<<"B";
+    else if(array_set[k] == 12)
+        cout<<"C";
+    else if(array_set[k] == 13)
+        cout<<"D";
+    else if(array_set[k] == 14)
+        cout<<"E";
+    else if(array_set[k] == 15)
+        cout<<"F";
+    else 
+        cout<<array_set[k];
     }
-    y = (arr1[0]*1000) + (arr1[1]*100) + (arr1[2]*10) + arr1[3];
-   
 }
 
 void bin_dec(int nmbr)
